@@ -1,0 +1,14 @@
+<div class="data-object">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Данные пассажира:</strong>
+    <%= @user.name %>
+    <%= @user.last_name %>
+  </p>
+</div>
+
+<div class="action-object">
+  <%= link_to 'Редактировать', edit_user_path(@user) %> |
+  <%= link_to 'Назад', users_path %>
+</div>

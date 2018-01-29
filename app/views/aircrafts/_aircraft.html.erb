@@ -1,0 +1,6 @@
+<tr>
+  <td><%= aircraft.model %></td>
+  <td><%= link_to 'Показать', aircraft %></td>
+  <td><%= link_to 'Редактировать', edit_aircraft_path(aircraft) %></td>
+  <td><%= link_to 'Удалить', aircraft, method: :delete, data: { confirm: 'Вы хотите удалить?' } %></td>
+</tr>

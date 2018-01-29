@@ -1,0 +1,17 @@
+<%= form_for(@aircraft) do |f| %>
+  <%= render 'common/errors', resource: @aircraft%>
+
+  <div class="field">
+    <%= f.label :model, 'Модель'%>
+    <%= f.text_field :model%>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_airport, 'Текущая станция' %>
+    <%= f.collection_select :current_airport_id, Airport.all, :id, :title %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "#{ @aircraft.new_record? ? 'Создать' : 'Изменить'}" %>
+  </div>
+<% end %>

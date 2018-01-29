@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Список пассажиров</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Имя</th>
+    <th>Фамилия</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <%= render @users%>
+
+  </tbody>
+</table>
+<div class='action-object'>
+  <%= link_to 'Добавить пассажира', new_user_path %>
+</div>

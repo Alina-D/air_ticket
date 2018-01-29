@@ -1,0 +1,33 @@
+<div class="data-object">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Номер  билета:</strong>
+    <%= @ticket.name %>
+  </p>
+
+  <p>
+    <strong>Самолет:</strong>
+    <% if @ticket.aircraft.present? %>
+      <%= @ticket.aircraft.model %>
+    <% else %>
+      Данные не найдены
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Пассажир:</strong>
+    <% if @ticket.user.present? %>
+        <%= @ticket.user.name %>
+        <%= @ticket.user.last_name %>
+    <% else %>
+        Данные не найдены
+    <% end %>
+  </p>
+</div>
+
+
+<div class="action-object">
+  <%= link_to 'Редактировать', edit_ticket_path(@ticket) %> |
+  <%= link_to 'Назад', tickets_path %>
+</div>

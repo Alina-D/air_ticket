@@ -1,0 +1,34 @@
+<div class="data-object">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Модель самолета:</strong>
+    <%= @aircraft.model %>
+  </p>
+  <p>
+    <strong> В аэропорту: </strong>
+    <% if @aircraft.current_airport.present? %>
+      <%= @aircraft.current_airport.title  %>
+    <% else %>
+      Не указано
+    <% end %>
+  </p>
+
+  <p>
+    <strong> Конфигурация:  </strong>
+    <% @aircraft.places.each do |place| %>
+      <%= link_to " пассажирские места - #{place.title}", place %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= link_to 'Добавить места', new_aircraft_place_path(@aircraft) %>
+  </p>
+
+
+</div>
+
+<div class="action-object">
+  <%= link_to 'Редактировать', edit_aircraft_path(@aircraft) %> |
+  <%= link_to 'Назад', aircrafts_path %>
+</div>

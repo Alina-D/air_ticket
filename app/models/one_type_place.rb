@@ -1,0 +1,2 @@
+class OneTypePlace < Place
+end

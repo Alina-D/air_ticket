@@ -1,0 +1,12 @@
+<%= form_for(@airport) do |f| %>
+  <%= render 'common/errors', resource: @airport%>
+
+  <div class="field">
+    <%= f.label :title, 'Название' %>
+    <%= f.text_field :title, id: :airport_title %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "#{ @airport.new_record? ? 'Создать' : 'Изменить'}" %>
+  </div>
+<% end %>

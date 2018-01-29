@@ -1,0 +1,46 @@
+<div class="data-object">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Маршрут:</strong>
+    <%= @route.name %>
+  </p>
+</div>
+
+<div class="data-object">
+  <strong>Станции:</strong>
+
+    <% if @route.airports.present? %>
+      <table>
+        <thead>
+          <tr>
+            <td width="100px">Название</td>
+            <td>Позиция</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @route.airports.ordered.each do |airport| %>
+            <tr>
+              <td><%= airport.title %></td>
+              <td>
+                  <%= form_tag update_position_airport_path(airport),
+                               method: :patch do %>
+                    <%= number_field_tag :position, airport.position_in(@route) %>
+                    <%= hidden_field_tag :route_id, @route.id %>
+                    <%= submit_tag 'Изменить' %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+        <p> нет данных </p>
+    <% end %>
+</div>
+
+
+<div class="action-object">
+  <%= link_to 'Редактировать', edit_route_path(@route) %> |
+  <%= link_to 'Назад', routes_path %>
+</div>

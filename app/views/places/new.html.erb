@@ -1,0 +1,32 @@
+<div class="data-object">
+  <p>
+    <strong> Новая конфигурация пассажирских мест</strong>
+  </p>
+
+    <%= form_for [@aircraft, @place] do |f| %>
+        <div class="field">
+          <%= f.label :title, 'Название' %>
+          <%= f.text_field :title  %>
+        </div>
+
+        <div class="field">
+          <%= f.label :economy_seats, 'Эконом класс'  %>
+          <%= f.number_field :economy_seats %>
+        </div>
+
+        <div class="field">
+          <%= f.label :comfort_seats, 'Комфорт класс'  %>
+          <%= f.number_field :comfort_seats %>
+        </div>
+
+        <div class="field">
+          <%= f.label :business_seats, 'Бизнес класс'  %>
+          <%= f.number_field :business_seats %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit 'Создать'  %>
+        </div>
+
+    <% end%>
+</div>

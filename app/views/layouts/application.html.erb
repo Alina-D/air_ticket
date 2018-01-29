@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AirTicket</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <div class="wrapper">
+
+    <header>
+      <%= link_to 'Самолеты', aircrafts_path %>
+      <%= link_to 'Аэропорты', airports_path %>
+      <%= link_to 'Маршруты', routes_path %>
+      <%= link_to 'Билеты', tickets_path %>
+      <%= link_to 'Пассажиры', users_path %>
+    </header>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <p>
+        <%= Date.today %>
+      </p>
+    </footer>
+  </div>
+
+  </body>
+</html>

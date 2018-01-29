@@ -1,0 +1,24 @@
+<div class="data-object">
+  <p>
+    <strong> Конфигурация: <%= @place.title %> </strong>
+  </p>
+
+  <p>
+    Самолет - <%= @place.aircraft.model %>
+  </p>
+
+  <p>
+    Бизнесс класс - <%= @place.business_seats %>
+  </p>
+
+  <p>
+    Комфорт класс - <%= @place.comfort_seats %>
+  </p>
+
+  <p>
+    Эконом класс - <%= @place.economy_seats %>
+  </p>
+
+  <%= link_to 'Назад', @place.aircraft %>
+</div>
+

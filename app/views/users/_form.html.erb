@@ -1,0 +1,16 @@
+<%= form_for(@user) do |form| %>
+    <%= render 'common/errors', resource: @user%>
+
+    <div class="field">
+      <%= form.label :name, 'Имя' %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= form.label :last_name, 'Фамилия' %>
+      <%= form.text_field :last_name %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "#{ @user.new_record? ? 'Создать' : 'Изменить'}" %>
+    </div>
+<% end %>

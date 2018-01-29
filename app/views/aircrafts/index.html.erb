@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Список самолетов</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Модель</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+    <%= render @aircrafts%>
+
+  </tbody>
+</table>
+
+<div class='action-object'>
+  <%= link_to 'Добавить самолет', new_aircraft_path %>
+</div>

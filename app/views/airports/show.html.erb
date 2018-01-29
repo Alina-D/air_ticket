@@ -1,0 +1,25 @@
+<div class="data-object">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Название:</strong>
+    <%= @airport.title %>
+  </p>
+
+  <p>
+    <strong>Маршрут:</strong>
+      <% if @airport.routes.empty? %>
+        Нет данных
+      <% else %>
+        <% @airport.routes.each do |route|%>
+          <br>
+          <%= route.name %>
+        <% end %>
+      <% end %>
+  </p>
+</div>
+
+<div class="action-object">
+  <%= link_to 'Редактировать', edit_airport_path(@airport) %> |
+  <%= link_to 'Назад', airports_path %>
+</div>
